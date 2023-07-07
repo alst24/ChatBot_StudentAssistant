@@ -1,0 +1,399 @@
+{
+  "intents": [
+    {
+      "intent": "Kegiatan",
+      "examples": [
+        {
+          "text": "Apa Kegiatan di fakultas teknik dalam waktu dekat ini?"
+        },
+        {
+          "text": "kegiatan bem dalam waktu dekat ini"
+        },
+        {
+          "text": "kegiatan di fakultas"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Kontak_BEM",
+      "examples": [
+        {
+          "text": "aku mau ketemu sama ketua BEM"
+        },
+        {
+          "text": "Bagaimana cara saya berkomunikasi dengan BEM Fakultas"
+        },
+        {
+          "text": "Saya ingin betemu dengan pihak BEM fakultas"
+        },
+        {
+          "text": "saya ingin meghubungi bem"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Kontak_DPM",
+      "examples": [
+        {
+          "text": "aku mau ngomong sama ketua DPM"
+        },
+        {
+          "text": "Saya ingin menghubungi ketua DPM"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "KontakHima",
+      "examples": [
+        {
+          "text": "Bagaimana saya dapat menghubungi Hima Jurusan"
+        },
+        {
+          "text": "saya ingin menghubungi HMTE"
+        },
+        {
+          "text": "saya ingin menghubungi HMTI"
+        },
+        {
+          "text": "Saya ingin menghubungi HMTP"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PimpinanFakultas",
+      "examples": [
+        {
+          "text": "nama dekan fakultas teknik"
+        },
+        {
+          "text": "nama lengkap pak sapta"
+        },
+        {
+          "text": "siapa dekan fakultas teknik"
+        },
+        {
+          "text": "Siapa nama pimpinan fakultas teknik"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "SIPA",
+      "examples": [
+        {
+          "text": "aku mau input mata kuliah"
+        },
+        {
+          "text": "aku mau lihat nilai akhir"
+        },
+        {
+          "text": "Saya mau input Mata kuliah"
+        },
+        {
+          "text": "saya mau melihat ipk saya"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Tentang_Aspirasi",
+      "examples": [
+        {
+          "text": "Aspirasi buatnya dimana ya?"
+        },
+        {
+          "text": "Cara buat aspirasi"
+        },
+        {
+          "text": "Saya ingin mengajukan Aspirasi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "TentangPelayananAkademik",
+      "examples": [
+        {
+          "text": "Saya in"
+        },
+        {
+          "text": "Saya ingin membuat Status Aktif Mahasiswa"
+        },
+        {
+          "text": "Saya ingin membuat Surat Permohonan Kerja Praktik (KP)"
+        },
+        {
+          "text": "Saya ingin membuat surat permohonan pemgambilan data penelitian"
+        },
+        {
+          "text": "saya ingin membuat surat rekomendasi"
+        },
+        {
+          "text": "Saya ingin mengajukan Surat Permohonan Magang"
+        },
+        {
+          "text": "saya ingin mengajukan transkip nilai sementara"
+        },
+        {
+          "text": "Saya ingin Pelayanan Akademik Fakultas Teknik"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "WakilPimipinan",
+      "examples": [
+        {
+          "text": "Siapa nama Wakil Dekan Fakultas Teknik"
+        },
+        {
+          "text": "siapa wakil dekan fakultas teknik"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Wakil Pimpinan",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Wakil Dekan 1 : Ir. Risandi Dwirama Putra S.T., M.Eng. \nWakil Dekan 2 : Ir. Eko Prayetno S.T., M.Eng."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#WakilPimipinan",
+      "dialog_node": "node_1_1688641494830",
+      "previous_sibling": "node_8_1688641143896"
+    },
+    {
+      "type": "standard",
+      "title": "KontakDPM",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kami bisa merekomendasikan untuk mengunjungi Intagram dibawah ini\ndpmft.umrah"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Instagram DPM Fakultas Teknik",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126418916994994216/image.png ",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Kontak_DPM",
+      "dialog_node": "node_2_1688628248691",
+      "previous_sibling": "node_3_1688628100886"
+    },
+    {
+      "type": "standard",
+      "title": "Pertanyaan_Kedua",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Saya bisa merekomendasikann anda ke Link dibawah ini\nhttp://portal.ft.umrah.ac.id/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#TentangPelayananAkademik",
+      "dialog_node": "node_3_1688628100886",
+      "previous_sibling": "node_5_1688625690188"
+    },
+    {
+      "type": "standard",
+      "title": "sipaumrah",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Saya merekomendasikan anda utnuk membuka link dibawah ini\nhttps://sipa2016.umrah.ac.id/"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#SIPA",
+      "dialog_node": "node_3_1688630065355",
+      "previous_sibling": "node_5_1688628864792"
+    },
+    {
+      "type": "standard",
+      "title": "Pertanyaan Awal",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Anda bisa mengunjungi Link dibawah Ini :\nhttps://forms.gle/kydTDeguT8Y5vp3j7"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "ForumAspirasiMahasiswa",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126403301433425940/qr-code.png ",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Tentang_Aspirasi",
+      "dialog_node": "node_5_1688625690188",
+      "previous_sibling": "node_9_1688640706739"
+    },
+    {
+      "type": "standard",
+      "title": "Kontakhima",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kami bisa merekomendasikan untuk mengunjungi Intagram \nHMTE : hmteumrah\nHMTI : umrahhmti\nHMTP : hmtp_umrah"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Instagram HMTI",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126419024906039307/image.png ",
+            "response_type": "image"
+          },
+          {
+            "title": "Instagram HMTE",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126419149690769489/image.png ",
+            "response_type": "image"
+          },
+          {
+            "title": "Instagram HMTP",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126419255630516285/image.png ",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#KontakHima",
+      "dialog_node": "node_5_1688628864792",
+      "previous_sibling": "node_6_1688628556573"
+    },
+    {
+      "type": "standard",
+      "title": "KontakBEM",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Kami bisa merekomendasikan untuk mengunjungi Intagram dibawah ini\nbemft_umrah"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Instagram BEM Fakultas Teknik",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126418552358965299/image.png ",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Kontak_BEM",
+      "dialog_node": "node_6_1688628556573",
+      "previous_sibling": "node_2_1688628248691"
+    },
+    {
+      "type": "standard",
+      "title": "Pimpinan",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ir. Sapta Nugraha S.T., M.Eng."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#PimpinanFakultas",
+      "dialog_node": "node_8_1688641143896",
+      "previous_sibling": "node_3_1688630065355"
+    },
+    {
+      "type": "standard",
+      "title": "Kegiatan",
+      "output": {
+        "generic": [
+          {
+            "title": "Kegiatan MLBB FTTK ",
+            "source": "https://cdn.discordapp.com/attachments/513676249978109952/1126467193744404490/WhatsApp_Image_2023-07-03_at_12.02.51.jpeg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "#Kegiatan",
+      "dialog_node": "node_9_1688640706739",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Selamat Datang di StudentAssitant, Apa yang bisa kami bantu?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "learning_opt_out": false,
+  "language": "en",
+  "description": "created for assistant 51a823fa-7437-4454-8edb-72e060ce0ab8",
+  "name": "StudentAssistent-dialog"
+}

@@ -555,18 +555,18 @@ https://templatemo.com/tm-557-grad-school
           checkSection();
         });
     </script>
-    <script>
-      window.watsonAssistantChatOptions = {
-        integrationID: "857bf12f-ceb6-45e5-a152-abf6b45cfeeb", // The ID of this integration.
-        region: "au-syd", // The region your integration is hosted in.
-        serviceInstanceID: "4fb6c912-fc49-4cc1-abdb-a0cfdd53a496", // The ID of your service instance.
-        onLoad: function(instance) { instance.render(); }
-      };
-      setTimeout(function(){
-        const t=document.createElement('script');
-        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-        document.head.appendChild(t);
-      });
-    </script>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "857bf12f-ceb6-45e5-a152-abf6b45cfeeb", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "4fb6c912-fc49-4cc1-abdb-a0cfdd53a496", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
 </body>
 </html>
